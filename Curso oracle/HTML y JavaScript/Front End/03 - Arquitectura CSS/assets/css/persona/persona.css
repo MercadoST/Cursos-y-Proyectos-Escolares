@@ -1,0 +1,11 @@
+.persona {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width:767px) {
+    .persona {
+        margin-bottom: 2rem;
+    }
+}

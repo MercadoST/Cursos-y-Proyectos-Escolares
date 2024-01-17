@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Asociados</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="col-md-6">
+            <div class="card-body">
+                <form method='POST' action="/add" name="formulario" id="formulario">
+                    <h2>Agregar Asociado</h2>
+                    <div>
+                        <label for="dni">DNI: </label>
+                        <input class="form-control" id="dni" type="number" name="dni" value="" maxlength="8"
+                            minlength="7" required>
+                    </div>
+                    <div>
+                        <label for="nombre">Nombre: </label>
+                        <input class="form-control" id="nombre" type="text" name="nombre" value="" required>
+                    </div>
+                    <div>
+                        <label for="apellido">Apellido: </label>
+                        <input class="form-control" id="apellido" type="text" name="apellido" value="" required>
+
+                    </div>
+                    <div>
+                        <label for="email">E-mail: </label>
+                        <input class="form-control" id="email" type="email" name="email" value="" required>
+                    </div>
+                    <div>
+                        <label for="fnacimiento">Fecha de Nacimiento: </label>
+                        <input class="form-control" id="fnacimiento" type="date" name="fnacimiento" value="" required>
+                    </div>
+                    <div>
+                        <label for="grsan">Grupo Sanguineo: </label>
+                        <select class="form-control" id="grsan" type="text" name="grsan" value="" required>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="enfermedad">Enfermedades Cronicas: </label>
+                        <select class="form-control" id="enfermedad" type="text" name="enfermedad" value="" required>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button id="agregar">Agregar</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-bordered table-hover">
+                <caption>Asociados</caption>
+                <tbody>
+                    <tr>
+                        <th>DNI</th>
+                        <th>Apellido</th>
+                        <th>Nombre</th>
+                        <th>E-mail</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Grupo sanguineo</th>
+                        <th>Enfermedades</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <%if (data.length> 0) { %>
+                        <% data.forEach(function(asoc) { %>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <%= asoc.dni %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= asoc.apellido %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= asoc.nombre %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= asoc.email %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= asoc.fnacimiento %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= asoc.grsan %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= asoc.enfermedad %>
+                                    </p>
+                                </td>
+                                <td><a href="/update/<%= asoc.dni %>" class="btn btn-success btn-block">
+                                        Editar
+                                    </a> <a href="/delete/<%= asoc.dni %>" class="btn btn-danger btn-block">
+                                        Borrar
+                                    </a></td>
+                            </tr>
+                            <% }) %>
+                                <% } else { %>
+                                    <div class="">
+                                        <p>Sin asociados aun.</p>
+                                    </div>
+                                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+</body>
+
+</html>

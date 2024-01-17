@@ -1,0 +1,13 @@
+las tablas deben tener nombre en plural.
+recomendado usar el ingles para simplificar.
+las columnas deben terminar en "_sufijo" en singular
+1° columna debe ser el id, 
+y las ultimas 2 deben ser date_create_sufijo y date_updated_sufijo.
+
+Relaciones: id_tablaRelacionadaSingular_tablaPrincipal 
+
+Auntenticaciones:
++ email_sufijo
++ password_sufijo
++ token_sufijo
++ token_exp_sufijo 

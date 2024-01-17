@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Año Mundial</title>
+</head>
+
+<body>
+    <h2>Año de Mundial </h2>
+</body>
+
+</html>
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    var anhoMundial = 1930;
+    while (anhoMundial <= 2022){
+
+        imprimir("Hubo mundial de FIFA en el año: "+ anhoMundial);
+        anhoMundial = anhoMundial + 4;
+    }
+</script>

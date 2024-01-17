@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+    <h2>Calculadora IMC</h2>
+</body>
+</html>
+<script>
+
+    function saltarLinea(){
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    function calcularImc(peso, altura){
+        return (peso / (altura * altura));
+    }
+
+    nombre = prompt("Ingrese su Nombre: ");
+    pesoInformado = prompt(nombre + ", informe su peso");
+    alturaInformada = prompt(nombre + ", informe su altura");
+
+    imcCalculado = calcularImc(pesoInformado, alturaInformada);
+
+    imprimir(nombre + ", su imc calculado es: " + imcCalculado);
+
+    if(imcCalculado < 18.5){
+        imprimir(nombre + "se encuentra en Insuficiencia Ponderal");
+    }
+    if(18.5 <= imcCalculado && imcCalculado < 25){
+        imprimir(nombre + "se encuentra en su peso Ideal");
+    }
+    if(25 <= imcCalculado && imcCalculado < 30){
+        imprimir(nombre + "se encuentra en Sobrepeso");
+    }
+    if(30 <= imcCalculado){
+        imprimir(nombre + "se encuentra con Obesidad");
+    }
+</script>

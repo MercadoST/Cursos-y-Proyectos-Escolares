@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Adivinacion</title>
+</head>
+
+<body>
+    <h2>juego Adivinacion</h2>
+</body>
+
+</html>
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    function sorteo(n){
+        var nPensado = Math.round(Math.random()*n);
+        return nPensado
+    }
+
+    var numeroSorteo = parseInt(prompt("Ingrese un numero para el sorteo: "));
+    var nPensado = sorteo(numeroSorteo);
+    var nLanzado = parseInt(prompt("Ingrese un numero entre 0-" + numeroSorteo));
+
+    if(nPensado == nLanzado){
+        imprimir("Usted acerto");
+    }
+    if(nPensado < nLanzado){
+        imprimir("Usted erró, el numero que eligió es mayor");
+    }
+    if(nPensado > nLanzado){
+        imprimir("Usted erró, el numero que eligió es menor");
+    }
+    
+</script>

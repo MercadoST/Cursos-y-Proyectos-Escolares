@@ -1,0 +1,14 @@
+.rodapie{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5rem;
+    padding-inline: 2rem;
+    flex-direction: row;
+}
+
+@media screen and (max-width:767px) {
+    .rodapie{
+        flex-direction: column;
+    }
+}

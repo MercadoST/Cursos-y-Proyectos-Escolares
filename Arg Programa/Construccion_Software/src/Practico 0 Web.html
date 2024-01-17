@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">   
+    <head>
+        <meta charset="utf-8"/>
+        <title>Practico 0 - Rifa</title> 
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        <div class="contenedor">
+            <h1>Numero de Rifa</h1>
+            <form>
+                <h2>Ingrese su nombre y apellido</h2>
+                <input type="text" placeholder="Nombre y Apellido" id="nombrePersona"/>
+                    
+                <h2>Ingrese un numero para la rifa</h2>
+                <input type="tel" placeholder="(Maximo 3 cifras)" id="numeroRifa" required minlength="1" maxlength="3"/>
+            </form>
+            
+            <button onclick="RegistrarRifa()" >Enviar</button> 
+        </div>
+    </body>
